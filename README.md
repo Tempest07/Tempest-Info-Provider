@@ -6,9 +6,11 @@ A small, public catalog of reviewed `SKILL.md` files for the Tempest WeCom assis
 
 - This repository contains skill documents only. Bot source code, credentials, local databases, and logs do not belong here.
 - Every imported skill must be pinned to a full 40-character Git commit SHA.
-- Importing creates a pending review record. It does not activate or execute the skill.
-- A WeCom administrator must inspect the exact pinned file and approve its SHA-256 hash.
-- Approved skills still remain non-executable until a separate activation sandbox is implemented.
+- Importing creates a pending record; approval and activation are separate administrator actions.
+- Group activation requires the exact 64-character SHA-256 hash and is scoped to that WeCom group.
+- A skill runs only through an explicit `/skill use <name> <question>` command.
+- Skill calls receive no ordinary chat history, do not write to ordinary chat history, and receive no tool permissions.
+- Risk-flagged or integrity-invalid skill content is blocked before a model request.
 
 ## Layout
 
